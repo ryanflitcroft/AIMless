@@ -1,4 +1,4 @@
-# NAME OF PROJECT
+# AIMless
 
 ## Project Objectives
 
@@ -8,7 +8,11 @@ git checkout -b workOnANewBranch
 
 * Essential Goals:
 
-  *
+  * list chats/ home page 
+  * auth page for login and sign up
+  * bio page
+  * chat room / send realt time message page
+  * responsive css /accessibility
 
 * Stretch Goals:
 
@@ -17,7 +21,8 @@ git checkout -b workOnANewBranch
 ### HTML SETUP
 
 ```html
-<section>
+<section id="auth">
+
 </section>
 ```
 

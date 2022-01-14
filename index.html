@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.typekit.net/snl6pcf.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles/reset.css">
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
     <link rel="stylesheet" href="./styles/home.css">
@@ -16,7 +19,8 @@
 
 <body>
     <header>
-
+      <img src="./assets/aimless-logo.png" alt="aimless logo image"/> 
+      <h1> Welcome to AIMless </h1>
     </header>
     <main>
         <section class="signIn-section">
@@ -30,10 +34,12 @@
             </form>
         </section>
           
-        <section class="signUp-section">
+        <section class="signUp-section, hidden">
             <h2>Sign-up</h2>
             <form id="signUp-form">
-              <label for="upEmail">Email</label>
+              <label for="username">Username</label>
+                <input type="text" class="" id="username-input" name="username">
+                <label for="upEmail">Email</label>
                 <input type="email" class="" id="upEmail-input" name="upEmail">
               <label for="upPassword">Password</label>
                 <input type="password" class="" id="upPassword-input" name="upPassword">
