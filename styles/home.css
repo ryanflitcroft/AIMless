@@ -1,12 +1,14 @@
 body {
 
-    --color1: #3d3d3d;
+    --color1: #414bb2;
     --color2: #017687;
-    --color3: ;
-    --color4: ;
-    --color5: ;
+    --color3: #b94351;
+    --color4: #ce7882;
+    --color5: #86eefe;
+    --color6: #e3b402;
+    --color7: #e9cb5d;
 
-    color: var(--color1);
+    background-color: #ce788288;
 }
 
 h1 {
@@ -74,4 +76,11 @@ width: 150px;
 h1 {
     font-family: 'Press Start 2P', cursive;
     color: var(--color2); 
+}
+
+button {
+    background-color: var(--color1);
+    color: white;
+    border-radius: 3px;
+    padding: 3px;
 }
