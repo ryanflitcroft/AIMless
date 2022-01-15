@@ -2,7 +2,16 @@ import { redirect, signInUser, signUpUser } from './fetch-utils.js';
 
 const signInForm = document.querySelector('#signIn-form');
 const signUpForm = document.querySelector('#signUp-form');
-
+const signUpLink = document.querySelector('#signup-link');
+const signInLink = document.querySelector('#signin-link');
+const signInSection = document.querySelector('.signIn-section');
+const signUpSection = document.querySelector('.signUp-section');
+console.log(signInForm,
+    signUpForm,
+    signUpLink,
+    signInLink,
+    signInSection,
+    signUpSection);
 signInForm.addEventListener('submit', async(e) => {
     e.preventDefault();
 
@@ -52,3 +61,12 @@ signUpForm.addEventListener('submit', async(e) => {
 
 });
 
+signInLink.addEventListener('click', () => {
+    signInSection.classList.remove('hidden');
+    signUpSection.classList.add('hidden');
+});
+
+signUpLink.addEventListener('click', () => {
+    signUpSection.classList.remove('hidden');
+    signInSection.classList.add('hidden');
+});
