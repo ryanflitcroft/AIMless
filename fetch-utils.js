@@ -23,9 +23,9 @@ export async function redirect() {
     }
 }
 
-export async function signUpUser(email, password){
+export async function signUpUser(email, password, username){
     const response = await client.auth.signUp({ email, password });
-    
+    await createProfile(username, email);
     return response.user;
 }
 
@@ -41,7 +41,7 @@ export async function logout() {
     return window.location.href = '../';
 }
 
-export async function createProfile(username, email) {
+async function createProfile(username, email) {
     //creating a profile in the supabase profile table that consists of a username and email. 
     const response = await client
         .from('profiles')

@@ -1,4 +1,4 @@
-import { redirect, signInUser, signUpUser, createProfile } from './fetch-utils.js';
+import { redirect, signInUser, signUpUser } from './fetch-utils.js';
 
 const signInForm = document.querySelector('#signIn-form');
 const signUpForm = document.querySelector('#signUp-form');
@@ -33,9 +33,9 @@ signUpForm.addEventListener('submit', async(e) => {
     const password = data.get('upPassword');
     // const profile = { username, email };
 
-    await createProfile(username, email);
+    
 
-    const user = await signUpUser(email, password);
+    const user = await signUpUser(email, password, username);
     console.log(user);
    
     if (password.length < 6) {
@@ -51,3 +51,4 @@ signUpForm.addEventListener('submit', async(e) => {
     }
 
 });
+
