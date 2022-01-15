@@ -4,6 +4,8 @@ const SUPABASE_URL = 'https://qdlvsbomvbacsxpxzrim.supabase.co';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+
+
 export async function getUser() {
     return client.auth.session();
 }
@@ -17,7 +19,7 @@ export async function checkAuth() {
 
 export async function redirect() {
     if (await getUser()) {
-        location.replace('./main');
+        location.replace('./chatrooms');
     }
 }
 
@@ -37,6 +39,14 @@ export async function logout() {
     await client.auth.signOut();
 
     return window.location.href = '../';
+}
+
+async function createProfile(profile) {
+    //creating a profile in the supabase profile table that consists of a username and email. 
+    const response = await client
+        .from('profiles')
+        .insert(profile); 
+    return checkError(response);
 }
 
 function checkError({ data, error }) {
