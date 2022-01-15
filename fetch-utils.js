@@ -41,11 +41,11 @@ export async function logout() {
     return window.location.href = '../';
 }
 
-async function createProfile(profile) {
+export async function createProfile(username, email) {
     //creating a profile in the supabase profile table that consists of a username and email. 
     const response = await client
         .from('profiles')
-        .insert(profile); 
+        .insert([{ username, email }]); 
     return checkError(response);
 }
 
