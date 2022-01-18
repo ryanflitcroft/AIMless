@@ -22,6 +22,10 @@ export async function getMessages(chat_id) {
     return checkError(response);
 }
 
+// export async function getChatrooms() {
+    
+// }
+
 export async function checkAuth() {
     const user = await getUser();
 
