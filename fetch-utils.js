@@ -10,12 +10,13 @@ export async function getUser() {
     return client.auth.session();
 }
 
-export async function getMessages() {
+export async function getMessages(chat_id) {
     const response = await client
         .from('messages')
         .select(`*, 
         profiles (*),
-        chatrooms (*)`);
+        chatrooms (*)`)
+        .match({ chat_id });
         console.log(response.data);
         
     return checkError(response);

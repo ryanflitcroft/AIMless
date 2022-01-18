@@ -30,13 +30,13 @@ form.addEventListener('submit', async(e) => {
 });
 
 window.addEventListener('load', async() => {
-    const messages = await getMessages();
+    const messages = await getMessages(1);
     chatroomNameEl.textContent = messages.chat_id;
     displayMessages();
 });
 
 async function displayMessages() {
-    const messages = await getMessages();
+    const messages = await getMessages(1);
      
     chatboxListEl.textContent = '';
 
