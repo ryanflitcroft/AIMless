@@ -1,11 +1,11 @@
-import { checkAuth, createMessage, getUser, logout } from '../fetch-utils.js';
-
+import { checkAuth, createMessage, getUser, logout, getMessages } from '../fetch-utils.js';
+import { renderMessages } from '../render-utils.js';
 checkAuth();
 
 const form = document.querySelector('form');
 const homeButton = document.querySelector('.home');
 const chatboxListEl = document.querySelector('.chatbox-list');
-const headEl = document.querySelector('.head');
+const chatroomNameEl = document.querySelector('h2');
 
 const logoutButton = document.getElementById('logout');
 
@@ -26,4 +26,22 @@ form.addEventListener('submit', async(e) => {
         message,
         user_id: user.user.id
     });
+    form.reset();
 });
+
+window.addEventListener('load', async() => {
+    const messages = await getMessages();
+    chatroomNameEl.textContent = messages.chat_id;
+    await displayMessages();
+});
+
+async function displayMessages() {
+    const messages = await getMessages();
+     
+    chatboxListEl.textContent = '';
+
+    for (let message of messages) {
+        const messagesEL = await renderMessages(message);
+        chatboxListEl.append(messagesEL);
+    }
+}

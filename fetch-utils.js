@@ -13,8 +13,9 @@ export async function getUser() {
 export async function getMessages() {
     const response = await client
         .from('messages')
-        .select();
-    
+        .select(`*, profiles (*), chatrooms (*)`);
+        console.log(response.data);
+        
     return checkError(response);
 }
 

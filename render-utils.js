@@ -9,7 +9,7 @@ export async function renderMessages(messages) {
     // iconEl.classList.add('icon');
     usernameEl.classList.add('username');
     textEl.classList.add('message-text');
-
+console.log(messages);
     usernameEl.textContent = `${messages.profiles.username} said: `;
     textEl.textContent = messages.message;
 
