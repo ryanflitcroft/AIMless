@@ -32,7 +32,7 @@ form.addEventListener('submit', async(e) => {
 window.addEventListener('load', async() => {
     const messages = await getMessages();
     chatroomNameEl.textContent = messages.chat_id;
-    await displayMessages();
+    displayMessages();
 });
 
 async function displayMessages() {
