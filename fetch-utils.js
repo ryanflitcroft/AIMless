@@ -10,6 +10,22 @@ export async function getUser() {
     return client.auth.session();
 }
 
+export async function getMessages() {
+    const response = await client
+        .from('messages')
+        .select();
+    
+    return checkError(response);
+}
+
+export async function createMessage(message){
+    const response = await client
+        .from('messages')
+        .insert(message);
+        // .single();
+
+    return checkError(response);
+}
 
 export async function checkAuth() {
     const user = await getUser();
