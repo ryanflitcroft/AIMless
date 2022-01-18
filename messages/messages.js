@@ -6,7 +6,7 @@ const form = document.querySelector('form');
 const homeButton = document.querySelector('.home');
 const chatboxListEl = document.querySelector('.chatbox-list');
 const chatroomNameEl = document.querySelector('h2');
-
+const params = new URLSearchParams(window.location.search);
 const logoutButton = document.getElementById('logout');
 
 logoutButton.addEventListener('click', () => {
@@ -30,14 +30,15 @@ form.addEventListener('submit', async(e) => {
 });
 
 window.addEventListener('load', async() => {
-    const messages = await getMessages();
-    chatroomNameEl.textContent = messages.chat_id;
-    await displayMessages();
+    const messages = await getMessages(1);
+    chatroomNameEl.textContent = messages[0].chatrooms.name;
+    console.log(messages);
+    displayMessages();
 });
 
 async function displayMessages() {
-    const messages = await getMessages();
-     
+    const messages = await getMessages(1);
+    
     chatboxListEl.textContent = '';
 
     for (let message of messages) {

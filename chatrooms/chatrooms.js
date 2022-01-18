@@ -13,3 +13,4 @@ window.addEventListener('resize', () => {
         window.scrollTo(0, 0);
     }
 });
+
