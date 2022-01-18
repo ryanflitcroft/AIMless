@@ -18,15 +18,6 @@ export async function getMessages() {
     return checkError(response);
 }
 
-export async function createMessage(message){
-    const response = await client
-        .from('messages')
-        .insert(message);
-        // .single();
-
-    return checkError(response);
-}
-
 export async function checkAuth() {
     const user = await getUser();
 
@@ -57,6 +48,10 @@ export async function logout() {
     return window.location.href = '../';
 }
 
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
+
 async function createProfile(username, email) {
     //creating a profile in the supabase profile table that consists of a username and email. 
     const response = await client
@@ -65,6 +60,13 @@ async function createProfile(username, email) {
     return checkError(response);
 }
 
-function checkError({ data, error }) {
-    return error ? console.error(error) : data;
+export async function createMessage(message){
+    const response = await client
+        .from('messages')
+        .insert(message);
+        // .single();
+
+    console.log(response.data);
+
+    return checkError(response);
 }
