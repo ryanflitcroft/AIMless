@@ -2,6 +2,9 @@ import { checkAuth, logout } from '../fetch-utils.js';
 
 checkAuth();
 
+const generalChatEl = document.querySelector('.general-chat');
+const form = document.querySelector('form');
+const chatroomsListEl = document.querySelector('.chatroom-list');
 const logoutButton = document.getElementById('logout');
 
 logoutButton.addEventListener('click', () => {

@@ -6,7 +6,6 @@ const form = document.querySelector('form');
 const homeButton = document.querySelector('.home');
 const chatboxListEl = document.querySelector('.chatbox-list');
 const chatroomNameEl = document.querySelector('h2');
-const params = new URLSearchParams(window.location.search);
 const logoutButton = document.getElementById('logout');
 
 logoutButton.addEventListener('click', () => {
@@ -46,3 +45,7 @@ async function displayMessages() {
         chatboxListEl.append(messagesEL);
     }
 }
+
+homeButton.addEventListener('click', () => {
+    window.location.href = '../chatrooms/';
+});
