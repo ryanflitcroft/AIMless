@@ -1,4 +1,4 @@
-import { checkAuth, createMessage, getUser, logout, getMessages } from '../fetch-utils.js';
+import { checkAuth, createMessage, getUser, logout, getMessages, getSingleChatroom } from '../fetch-utils.js';
 import { renderMessages } from '../render-utils.js';
 checkAuth();
 
@@ -6,8 +6,8 @@ const form = document.querySelector('form');
 const homeButton = document.querySelector('.home');
 const chatboxListEl = document.querySelector('.chatbox-list');
 const chatroomNameEl = document.querySelector('h2');
-const params = new URLSearchParams(window.location.search);
 const logoutButton = document.getElementById('logout');
+const params = new URLSearchParams(window.location.search);
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -21,23 +21,30 @@ form.addEventListener('submit', async(e) => {
 
     const user = await getUser();
     console.log(user);
-
+    const id = params.get('id');
+    // const chat_id = await getSingleChatroom(id);
+    console.log(id);
     await createMessage({
         message,
-        user_id: user.user.id
+        user_id: user.user.id,
+        chat_id: id
     });
     form.reset();
 });
 
 window.addEventListener('load', async() => {
-    const messages = await getMessages(1);
-    chatroomNameEl.textContent = messages[0].chatrooms.name;
+    const id = params.get('id');
+    const messages = await getMessages(id);
+    const chatroom = await getSingleChatroom(id);
+    chatroomNameEl.textContent = chatroom.name;
+
     console.log(messages);
     displayMessages();
 });
 
 async function displayMessages() {
-    const messages = await getMessages(1);
+    const id = params.get('id');
+    const messages = await getMessages(id);
     
     chatboxListEl.textContent = '';
 
@@ -46,3 +53,7 @@ async function displayMessages() {
         chatboxListEl.append(messagesEL);
     }
 }
+
+homeButton.addEventListener('click', () => {
+    window.location.href = '../chatrooms/';
+});
