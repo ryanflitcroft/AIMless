@@ -14,7 +14,36 @@ header button {
     cursor: pointer;
 }
 
-@media only screen and (min-width: 500px) {
+section {
+    border: solid 2px var(--color1);
+    margin: 1em;
+    width: 300px;
+}
+
+img {
+    height: 2em;
+    align-self: center;
+    /* margin: 0 5px; */
+}
+
+h2 {
+    color: white;
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media only screen and (min-width: 500px) {
 
     main {
         flex-direction: column;
@@ -25,6 +54,6 @@ header button {
     section {
         margin: 0 2em;
     }
-}
+} */
 
 
