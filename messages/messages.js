@@ -6,12 +6,8 @@ const form = document.querySelector('form');
 const homeButton = document.querySelector('.home');
 const chatboxListEl = document.querySelector('.chatbox-list');
 const chatroomNameEl = document.querySelector('h2');
-const logoutButton = document.getElementById('logout');
 const params = new URLSearchParams(window.location.search);
 
-logoutButton.addEventListener('click', () => {
-    logout();
-});
 
 form.addEventListener('submit', async(e) => {
     e.preventDefault();
@@ -40,7 +36,11 @@ window.addEventListener('load', async() => {
     chatroomNameEl.textContent = chatroom.name;
 
     if (chatroom.id === 7) {
-        form.style.display = 'none';
+        // form.style.display = 'none';
+        const chatbox = document.getElementById('chatbox');
+        const chatContainer = document.getElementById('chat-container');
+        chatbox.classList.add('hidden');
+        chatContainer.style.height = '500px';
     }
 
     displayMessages();

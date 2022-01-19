@@ -14,6 +14,7 @@ body {
 }
 
 h1 {
+    margin: 0;
     letter-spacing: 0.15em;
 }
 
@@ -63,17 +64,6 @@ button {
     display: none;
 } 
 
-@media only screen and (min-width: 500px) {
-    main {
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    section {
-        margin: 0 2em;
-    }
-}
 header img {
 width: 150px;
 }
@@ -92,45 +82,14 @@ button {
 }
 
 
+@media only screen and (min-width: 500px) {
+    main {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
 
-.head {
-    background-color: var(--color1);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-
-}
-
-.top {
-    height: 300px;
-    
-}
-
-.bottom {
-    border-top: solid 2em var(--color1);
-    padding: 1em;
-    height: 150px;
-}
-
-.chatrooms-container {
-    padding: .5em 1em;
-    align-items: center;
-
-}
-
-form div {
-}
-
-.chatbox-list {
-    overflow-y: scroll;
-    height: 300px;
-}
-
-.message-container p {
-    text-align: center;
-}
-
-span {
-    color: var(--color8);
+    section {
+        margin: 0 2em;
+    }
 }

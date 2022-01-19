@@ -17,25 +17,27 @@
 
 <body>
     <header>
-        <button id="logout">Logout</button>
+
     </header>    
 
     <main>
-        <section class="top chatbox">
+        <section id="chat-container" class="top chatbox">
             <div class="head">
                 <img src="../assets/logo.png" alt="" width="35">
                 <h2>chatrooms.name</h2>
-                <button class="home">X</button>
+                <button class="home" title="chatrooms">X</button>
             </div>
             <div class="chatbox-list">
 
             </div>
         </section>
-        <section class="bottom textbox">
+        <section id="chatbox" class="bottom textbox">
             <form name="create-message" id="create-message">
                 <!-- <img src="" alt="user icon"> -->
-                <input name="message" type="text">
-                <button form="create-message" type="submit">✉</button>
+                <div>
+                    <input name="message" type="text">
+                    <button form="create-message" type="submit" title="send">✉</button>
+                </div>
             </form>
         </section>
     </main>
