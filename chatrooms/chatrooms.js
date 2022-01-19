@@ -54,7 +54,10 @@ async function displayChatrooms() {
 async function displayGeneralChat() {
     const messages = await getMessages(1);
 
-    for (let message of messages) {
+    const lastMessages = messages.slice(-2);
+
+    console.log(lastMessages);
+    for (let message of lastMessages) {
         // const messageOne = message[0];
         // const messageTwo = message[1];
 
