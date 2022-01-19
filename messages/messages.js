@@ -21,10 +21,13 @@ form.addEventListener('submit', async(e) => {
 
     const user = await getUser();
     console.log(user);
-
+    const id = params.get('id');
+    // const chat_id = await getSingleChatroom(id);
+    console.log(id);
     await createMessage({
         message,
-        user_id: user.user.id
+        user_id: user.user.id,
+        chat_id: id
     });
     form.reset();
 });
