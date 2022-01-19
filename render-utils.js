@@ -20,6 +20,7 @@ export async function renderChatrooms(chatrooms) {
     const nameEl = document.createElement('a');
     
     nameEl.href = `../messages/?id=${chatrooms.id}`;
+    chatroomsContainerEl.classList.add('chat-names');
 
     nameEl.textContent = chatrooms.name;
     chatroomsContainerEl.append(nameEl);

@@ -21,6 +21,7 @@ h1 {
 h2{
     align-self: center;
 }
+
 header {
     display: flex;
     flex-direction: column;
@@ -58,6 +59,10 @@ input {
 button {
     margin: 1em;
     cursor: pointer;
+}
+
+span {
+    color: var(--color8);
 }
 
 .hidden {

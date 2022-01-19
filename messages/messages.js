@@ -40,10 +40,9 @@ window.addEventListener('load', async() => {
     chatroomNameEl.textContent = chatroom.name;
 
     if (chatroom.id === 7) {
-        // form.style.display = 'none';
-
         chatbox.classList.add('hidden');
         chatContainer.style.height = '500px';
+        chatboxListEl.style.height = '500px';
     }
 
     displayMessages();
