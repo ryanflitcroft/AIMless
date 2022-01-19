@@ -17,11 +17,9 @@ h1 {
     letter-spacing: 0.15em;
 }
 
-h2 {
-    color: white;
-    font-size: 1em;
+h2{
+    align-self: center;
 }
-
 header {
     display: flex;
     flex-direction: column;
@@ -42,9 +40,6 @@ main {
 section {
     display: flex;
     flex-direction: column;
-    border: solid 2px var(--color1);
-    margin: 1em;
-    width: 300px;
 }
 
 form {
@@ -86,6 +81,7 @@ width: 150px;
 h1 {
     font-family: 'Press Start 2P', cursive;
     color: var(--color2); 
+    padding: 1em;
 }
 
 button {
@@ -95,11 +91,7 @@ button {
     padding: 3px;
 }
 
-img {
-    height: 2em;
-    align-self: center;
-    /* margin: 0 5px; */
-}
+
 
 .head {
     background-color: var(--color1);
@@ -137,4 +129,8 @@ form div {
 
 .message-container p {
     text-align: center;
+}
+
+span {
+    color: var(--color8);
 }
