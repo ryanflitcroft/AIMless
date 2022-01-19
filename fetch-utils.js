@@ -29,6 +29,15 @@ export async function getChatrooms() {
     return checkError(response);
 }
 
+export async function getSingleChatroom(id) {
+    const response = await client
+        .from('chatrooms')
+        .select()
+        .match({ id })
+        .single();
+    return checkError(response);
+}
+
 export async function checkAuth() {
     const user = await getUser();
 

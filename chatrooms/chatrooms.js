@@ -13,6 +13,7 @@ logoutButton.addEventListener('click', () => {
 });
 
 window.addEventListener('load', async() => {
+    
     await displayChatrooms();
     
 });
