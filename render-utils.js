@@ -9,7 +9,7 @@ export async function renderMessages(messages) {
     // iconEl.classList.add('icon');
     usernameEl.classList.add('username');
     textEl.classList.add('message-text');
-    console.log(messages);
+
     usernameEl.textContent = `${messages.profiles.username} said: `;
     textEl.textContent = messages.message;
 
@@ -29,6 +29,21 @@ export async function renderChatrooms(chatrooms) {
     // iconEl.classList.add('icon');
     nameEl.textContent = chatrooms.name;
     chatroomsContainerEl.append(nameEl);
-    console.log(nameEl, chatroomsContainerEl);
+
     return chatroomsContainerEl;
 }
+
+// export async function renderGeneralChat(messages) {
+
+//     const chatroomEl = document.createElement('div');
+//     const messageOneEl = document.createElement('p');
+//     const messageTwoEl = document.createElement('p');
+
+
+//     messageOneEl.classList.add('message-one');
+//     messageTwoEl.classList.add('message-two');
+
+//     chatroomEl.append(messageOneEl, messageTwoEl);
+
+//     return chatroomEl;
+// }

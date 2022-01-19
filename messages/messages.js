@@ -20,10 +20,10 @@ form.addEventListener('submit', async(e) => {
     const message = data.get('message');
 
     const user = await getUser();
-    console.log(user);
+
     const id = params.get('id');
     // const chat_id = await getSingleChatroom(id);
-    console.log(id);
+
     await createMessage({
         message,
         user_id: user.user.id,
@@ -38,14 +38,14 @@ window.addEventListener('load', async() => {
     const chatroom = await getSingleChatroom(id);
     chatroomNameEl.textContent = chatroom.name;
 
-    console.log(messages);
+
     displayMessages();
 });
 
 async function displayMessages() {
     const id = params.get('id');
     const messages = await getMessages(id);
-    
+    console.log(messages);
     chatboxListEl.textContent = '';
 
     for (let message of messages) {
