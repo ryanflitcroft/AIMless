@@ -1,18 +1,24 @@
 body {
 
-    --color1: #414bb2;
+    --color1: #3d3d3d;
     --color2: #017687;
     --color3: #b94351;
-    --color4: #ce7882;
+    --color4: #ead1dcff;
     --color5: #86eefe;
     --color6: #e3b402;
     --color7: #e9cb5d;
+    --color8: #414bb2;
 
-    background-color: #ce788288;
+    background: var(--color4);
+    color: var(--color1);
 }
 
 h1 {
     letter-spacing: 0.15em;
+}
+
+h2 {
+    color: white;
 }
 
 header {
@@ -35,6 +41,8 @@ main {
 section {
     display: flex;
     flex-direction: column;
+    border: solid 2px var(--color1);
+    margin: 1em;
 }
 
 form {
@@ -79,8 +87,39 @@ h1 {
 }
 
 button {
-    background-color: var(--color1);
+    background-color: var(--color8);
     color: white;
     border-radius: 3px;
     padding: 3px;
+}
+
+img {
+    height: 2em;
+    align-self: center;
+    /* margin: 0 5px; */
+}
+
+.head {
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bottom {
+    border-top: solid 2em var(--color1);
+    padding: 1em;
+}
+
+.chatrooms-container {
+    padding: .5em 1em;
+    align-items: center;
+
+}
+
+form div {
+}
+
+.message-container p {
+    text-align: center;
 }
