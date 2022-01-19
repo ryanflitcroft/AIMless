@@ -6,7 +6,6 @@ const generalChatEl = document.querySelector('.general-chat');
 const form = document.querySelector('form');
 const chatroomsListEl = document.querySelector('.chatroom-list');
 const logoutButton = document.getElementById('logout');
-const params = new URLSearchParams(window.location.search);
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -64,12 +63,11 @@ async function displayGeneralChat() {
     const messages = await getMessages(1);
 
     const lastMessages = messages.slice(-2);
+    
+    generalChatEl.textContent = '';
 
-    console.log(lastMessages);
     for (let message of lastMessages) {
-        // const messageOne = message[0];
-        // const messageTwo = message[1];
-
+       
         const messagesEl = await renderMessages(message);
 
         generalChatEl.append(messagesEl);
