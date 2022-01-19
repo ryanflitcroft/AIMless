@@ -2,10 +2,12 @@ import { checkAuth, logout, getUser, createMessage, getChatrooms, getMessages, c
 import { renderChatrooms, renderMessages } from '../render-utils.js';
 checkAuth();
 
-const generalChatEl = document.querySelector('.general-chat');
-const form = document.querySelector('form');
-const chatroomsListEl = document.querySelector('.chatroom-list');
-const logoutButton = document.getElementById('logout');
+const generalChatEl = document.querySelector('#general-chat');
+const createMessageForm = document.querySelector('#create-message');
+const chatroomsListEl = document.querySelector('#chatroom-list');
+const logoutButton = document.querySelector('#logout');
+
+console.log(generalChatEl, createMessageForm, chatroomsListEl, logoutButton);
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -26,10 +28,10 @@ window.addEventListener('load', async() => {
         .subscribe();
 });
 
-form.addEventListener('submit', async(e) => {
+createMessageForm.addEventListener('submit', async(e) => {
     e.preventDefault();
 
-    const data = new FormData(form);
+    const data = new FormData(createMessageForm);
     const message = data.get('message');
 
     const user = await getUser();
@@ -42,7 +44,7 @@ form.addEventListener('submit', async(e) => {
         chat_id: 1
     });
 
-    form.reset();
+    createMessageForm.reset();
 });
 
 async function displayChatrooms() {
