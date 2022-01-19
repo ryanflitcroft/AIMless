@@ -63,11 +63,11 @@ async function displayGeneralChat() {
     const messages = await getMessages(1);
 
     const lastMessages = messages.slice(-2);
-    
+
     generalChatEl.textContent = '';
 
     for (let message of lastMessages) {
-       
+
         const messagesEl = await renderMessages(message);
 
         generalChatEl.append(messagesEl);
