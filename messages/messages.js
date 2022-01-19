@@ -1,4 +1,4 @@
-import { checkAuth, createMessage, getUser, logout, getMessages, getSingleChatroom } from '../fetch-utils.js';
+import { checkAuth, createMessage, getUser, logout, getMessages, getSingleChatroom, client } from '../fetch-utils.js';
 import { renderMessages } from '../render-utils.js';
 checkAuth();
 
@@ -34,12 +34,20 @@ form.addEventListener('submit', async(e) => {
 
 window.addEventListener('load', async() => {
     const id = params.get('id');
-    const messages = await getMessages(id);
+    await getMessages(id);
     const chatroom = await getSingleChatroom(id);
     chatroomNameEl.textContent = chatroom.name;
 
 
     displayMessages();
+
+    await client
+        .from('*')
+        .on('*', async payload => {
+            console.log('Change received!', payload);
+            await displayMessages();
+        })
+        .subscribe();
 });
 
 async function displayMessages() {

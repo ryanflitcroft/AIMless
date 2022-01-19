@@ -2,7 +2,7 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const SUPABASE_URL = 'https://qdlvsbomvbacsxpxzrim.supabase.co';
 
-const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+export const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
 
