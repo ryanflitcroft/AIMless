@@ -64,6 +64,8 @@ async function displayGeneralChat() {
     const messages = await getMessages(1);
 
     const lastMessages = messages.slice(-2);
+    
+    generalChatEl.textContent = '';
 
     console.log(lastMessages);
     for (let message of lastMessages) {
