@@ -1,4 +1,4 @@
-import { checkAuth, logout, getUser, createMessage, getChatrooms, getMessages } from '../fetch-utils.js';
+import { checkAuth, logout, getUser, createMessage, getChatrooms, getMessages, client } from '../fetch-utils.js';
 import { renderChatrooms, renderMessages } from '../render-utils.js';
 checkAuth();
 
@@ -17,6 +17,14 @@ window.addEventListener('load', async() => {
     await displayChatrooms();
     
     await displayGeneralChat();
+
+    await client
+        .from('*')
+        .on('*', async payload => {
+            console.log('Change received!', payload);
+            await displayGeneralChat();
+        })
+        .subscribe();
 });
 
 form.addEventListener('submit', async(e) => {
