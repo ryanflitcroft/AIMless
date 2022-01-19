@@ -34,10 +34,14 @@ form.addEventListener('submit', async(e) => {
 
 window.addEventListener('load', async() => {
     const id = params.get('id');
+    
     await getMessages(id);
     const chatroom = await getSingleChatroom(id);
     chatroomNameEl.textContent = chatroom.name;
 
+    if (chatroom.id === 7) {
+        form.style.display = 'none';
+    }
 
     displayMessages();
 
@@ -53,7 +57,6 @@ window.addEventListener('load', async() => {
 async function displayMessages() {
     const id = params.get('id');
     const messages = await getMessages(id);
-    console.log(messages);
     chatboxListEl.textContent = '';
 
     for (let message of messages) {

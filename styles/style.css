@@ -34,9 +34,4 @@ header button {
     }
 }
 
-@media only screen and (min-height: 565px) {
 
-    body {
-        overflow-y: hidden;
-    }
-}
