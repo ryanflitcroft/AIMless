@@ -44,9 +44,10 @@ async function displayChatrooms() {
     chatroomsListEl.textContent = '';
 
     for (let chatroom of chatrooms) {
-        const chatroomEl = await renderChatrooms(chatroom);
-        chatroomsListEl.append(chatroomEl);
-
+        if (chatroom.id !== 1) {
+            const chatroomEl = await renderChatrooms(chatroom);
+            chatroomsListEl.append(chatroomEl);
+        }
         
     }
 }
