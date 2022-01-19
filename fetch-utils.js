@@ -17,7 +17,6 @@ export async function getMessages(chat_id) {
         profiles (*),
         chatrooms (*)`)
         .match({ chat_id });
-        console.log(response.data);
         
     return checkError(response);
 }
@@ -86,7 +85,6 @@ export async function createMessage(message){
         .insert(message);
         // .single();
 
-    console.log(response.data);
 
     return checkError(response);
 }
