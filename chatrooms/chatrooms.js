@@ -7,6 +7,7 @@ const createMessageForm = document.querySelector('#create-message');
 const chatroomsListEl = document.querySelector('#chatroom-list');
 const logoutButton = document.querySelector('#logout');
 
+
 console.log(generalChatEl, createMessageForm, chatroomsListEl, logoutButton);
 
 logoutButton.addEventListener('click', () => {

@@ -1,5 +1,5 @@
 import { checkAuth, createMessage, getUser, getMessages, getSingleChatroom, client } from '../fetch-utils.js';
-import { renderMessages, updateLog } from '../render-utils.js';
+import { renderMessages } from '../render-utils.js';
 checkAuth();
 
 const createMessageForm = document.querySelector('#create-message');
@@ -9,8 +9,6 @@ const chatroomNameEl = document.querySelector('#chatroom-name');
 const chatbox = document.querySelector('#chatbox');
 const chatContainer = document.querySelector('#chat-container');
 const params = new URLSearchParams(window.location.search);
-
-console.log(createMessageForm, homeButton, chatboxListEl, chatroomNameEl);
 
 
 createMessageForm.addEventListener('submit', async(e) => {
@@ -66,6 +64,12 @@ async function displayMessages() {
     for (let message of messages) {
         const messagesEL = await renderMessages(message);
         chatboxListEl.append(messagesEL);
+
+        let theme = message.chatrooms.theme;
+
+        chatboxListEl.style.backgroundImage = 'url(' + theme + ')';
+        
+        chatboxListEl.style.backgroundSize = 'cover';
     }
 }
 

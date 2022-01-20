@@ -14,6 +14,7 @@ section {
     border: solid 2px var(--color1);
     margin: 0.5em;
     width: 300px;
+    background-color: #fafafaa1;
 }
 
 section div.head {
@@ -57,10 +58,10 @@ h2 {
 }
 
 p {
-    background: #60638841;
+    background: rgba(255, 255, 255, 0.76);
     padding: .75em;
     border-radius: 0 1em 1em 1em;
-    border: solid 3px #60638899
+    border: solid 3px #606388b7
 }
 
 div p {
