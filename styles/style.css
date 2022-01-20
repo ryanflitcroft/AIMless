@@ -23,11 +23,16 @@ section div.head {
     justify-content: space-between;
 }
 
+#chat-container {
+    height: 356px;
+    
+}
+
 section div.chatroom-list {
     height: 300px;
     overflow-y: scroll;
-    padding: .5em 1em;
-    align-items: center;
+    /* padding: .5em 1em;
+    align-items: center; */
 }
 
 section.general-chatbox {
@@ -79,6 +84,7 @@ form button {
     padding: 0;
     margin: 0;
     text-shadow: 3px 3px 3px var(--color1);
+    cursor: pointer;
 }
 
 .chat-names {

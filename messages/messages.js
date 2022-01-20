@@ -1,5 +1,5 @@
 import { checkAuth, createMessage, getUser, getMessages, getSingleChatroom, client } from '../fetch-utils.js';
-import { renderMessages } from '../render-utils.js';
+import { renderMessages, updateLog } from '../render-utils.js';
 checkAuth();
 
 const createMessageForm = document.querySelector('#create-message');
@@ -45,16 +45,17 @@ window.addEventListener('load', async() => {
         chatboxListEl.style.height = '500px';
     }
 
-    displayMessages();
+    await displayMessages();
 
     await client
         .from('*')
         .on('*', async payload => {
             console.log('Change received!', payload);
             await displayMessages();
+            chatboxListEl.scrollTop = 100000;
         })
         .subscribe();
-    
+    chatboxListEl.scrollTop = 100000;
 });
 
 async function displayMessages() {

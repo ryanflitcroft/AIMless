@@ -24,9 +24,10 @@ window.addEventListener('load', async() => {
         .on('*', async payload => {
             console.log('Change received!', payload);
             await displayGeneralChat();
+            generalChatEl.scrollTop = 999;
         })
         .subscribe();
-    generalChatEl.scrollTop = 96;
+    generalChatEl.scrollTop = 999;
 });
 
 createMessageForm.addEventListener('submit', async(e) => {
