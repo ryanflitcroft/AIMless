@@ -26,7 +26,7 @@ window.addEventListener('load', async() => {
             await displayGeneralChat();
         })
         .subscribe();
-    generalChatEl.scrollTop = 96;
+    generalChatEl.scrollTop = 999;
 });
 
 createMessageForm.addEventListener('submit', async(e) => {

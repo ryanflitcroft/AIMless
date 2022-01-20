@@ -54,7 +54,7 @@ window.addEventListener('load', async() => {
             await displayMessages();
         })
         .subscribe();
-    
+        chatboxListEl.scrollTop = 999;
 });
 
 async function displayMessages() {
