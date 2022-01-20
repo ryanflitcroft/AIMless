@@ -5,6 +5,8 @@ export async function renderMessages(messages) {
     const usernameEl = document.createElement('span');
     const textEl = document.createElement('span');
 
+    usernameEl.classList.add('username');
+
     usernameEl.textContent = `${messages.profiles.username} said: `;
     textEl.textContent = messages.message;
 
