@@ -34,7 +34,6 @@ section.general-chatbox {
     border-top: solid 2em var(--color1);
     padding: 1em;
     height: 200px;
-    text-align: center;
 }
 
 section.message-box {
@@ -54,14 +53,14 @@ h2 {
 
 p {
     background: #60638841;
-    padding: 0.75em;
+    padding: .75em;
     border-radius: 0 1em 1em 1em;
     border: solid 3px #60638899
 }
 
 div p {
     margin: 0.25em;
-    padding: 0.25em;
+    padding: 0.5em;
 }
 
 form div {
@@ -70,12 +69,16 @@ form div {
     justify-content: baseline; */
 
 }
+div.general-chat {
+    overflow-y: scroll;
+}
 
 form button {
     all: unset;
-    font-size: 1em;
+    font-size: 1.5em;
     padding: 0;
     margin: 0;
+    text-shadow: 3px 3px 3px var(--color1);
 }
 
 .chat-names {
@@ -84,6 +87,11 @@ form button {
 
 span {
     color: var(--color1);
+}
+
+span.username{
+    display: block;
+    color: var(--color2);
 }
 
 /* 

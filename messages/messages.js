@@ -1,4 +1,4 @@
-import { checkAuth, createMessage, getUser, logout, getMessages, getSingleChatroom, client } from '../fetch-utils.js';
+import { checkAuth, createMessage, getUser, getMessages, getSingleChatroom, client } from '../fetch-utils.js';
 import { renderMessages } from '../render-utils.js';
 checkAuth();
 
