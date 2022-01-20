@@ -54,6 +54,7 @@ window.addEventListener('load', async() => {
             await displayMessages();
         })
         .subscribe();
+    
 });
 
 async function displayMessages() {
