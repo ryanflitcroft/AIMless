@@ -2,21 +2,21 @@ import { checkAuth, createMessage, getUser, logout, getMessages, getSingleChatro
 import { renderMessages } from '../render-utils.js';
 checkAuth();
 
-const form = document.querySelector('form');
-const homeButton = document.querySelector('.home');
-const chatboxListEl = document.querySelector('.chatbox-list');
-const chatroomNameEl = document.querySelector('h2');
-const logoutButton = document.getElementById('logout');
+const createMessageForm = document.querySelector('#create-message');
+const homeButton = document.querySelector('#home-button');
+const chatboxListEl = document.querySelector('#chatbox-list');
+const chatroomNameEl = document.querySelector('#chatroom-name');
+const chatbox = document.querySelector('#chatbox');
+const chatContainer = document.querySelector('#chat-container');
 const params = new URLSearchParams(window.location.search);
 
-logoutButton.addEventListener('click', () => {
-    logout();
-});
+console.log(createMessageForm, homeButton, chatboxListEl, chatroomNameEl);
 
-form.addEventListener('submit', async(e) => {
+
+createMessageForm.addEventListener('submit', async(e) => {
     e.preventDefault();
 
-    const data = new FormData(form);
+    const data = new FormData(createMessageForm);
     const message = data.get('message');
 
     const user = await getUser();
@@ -29,7 +29,7 @@ form.addEventListener('submit', async(e) => {
         user_id: user.user.id,
         chat_id: id
     });
-    form.reset();
+    createMessageForm.reset();
 });
 
 window.addEventListener('load', async() => {
@@ -40,7 +40,9 @@ window.addEventListener('load', async() => {
     chatroomNameEl.textContent = chatroom.name;
 
     if (chatroom.id === 7) {
-        form.style.display = 'none';
+        chatbox.classList.add('hidden');
+        chatContainer.style.height = '500px';
+        chatboxListEl.style.height = '500px';
     }
 
     displayMessages();

@@ -12,30 +12,32 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Main</title>
+    <title>Messages</title>
 </head>
 
 <body>
     <header>
-        <button id="logout">Logout</button>
+
     </header>    
 
     <main>
-        <section class="top chatbox">
+        <section id="chat-container">
             <div class="head">
                 <img src="../assets/logo.png" alt="" width="35">
-                <h2>chatrooms.name</h2>
-                <button class="home">X</button>
+                <h2 id="chatroom-name"></h2>
+                <button id="home-button" title="chatrooms">X</button>
             </div>
-            <div class="chatbox-list">
+            <div id="chatbox-list" class="chatroom-list">
 
             </div>
         </section>
-        <section class="bottom textbox">
+        <section id="chatbox" class="message-box">
             <form name="create-message" id="create-message">
                 <!-- <img src="" alt="user icon"> -->
-                <input name="message" type="text">
-                <button form="create-message" type="submit">✉</button>
+                <div>
+                    <input name="message" type="text">
+                    <button form="create-message" type="submit" title="send">Send ✉</button>
+                </div>
             </form>
         </section>
     </main>

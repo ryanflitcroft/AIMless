@@ -1,12 +1,3 @@
-body {
-
-}
-
-main {
-    width: 100%;
-    height: 100%;
-}
-
 header button {
     all: unset;
     align-self: flex-end;
@@ -14,16 +5,46 @@ header button {
     cursor: pointer;
 }
 
+main {
+    width: 100%;
+    height: 100%;
+}
+
 section {
     border: solid 2px var(--color1);
-    margin: 1em;
+    margin: 0.5em;
     width: 300px;
+}
+
+section div.head {
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section div.chatroom-list {
+    height: 300px;
+    overflow-y: scroll;
+    padding: .5em 1em;
+    align-items: center;
+}
+
+section.general-chatbox {
+    border-top: solid 2em var(--color1);
+    padding: 1em;
+    height: 200px;
+    text-align: center;
+}
+
+section.message-box {
+    border-top: solid 2em var(--color1);
+    padding: 1em;
 }
 
 img {
     height: 2em;
     align-self: center;
-    /* margin: 0 5px; */
 }
 
 h2 {
@@ -31,19 +52,73 @@ h2 {
     font-size: 1em;
 }
 
+p {
+    background: #60638841;
+    padding: 0.75em;
+    border-radius: 0 1em 1em 1em;
+    border: solid 3px #60638899
+}
 
+div p {
+    margin: 0.25em;
+    padding: 0.25em;
+}
 
+form div {
+    text-align: center;
+    /* display: flex;
+    justify-content: baseline; */
 
+}
 
+form button {
+    all: unset;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+}
 
+.chat-names {
+    padding: 0.5em;
+}
 
+span {
+    color: var(--color1);
+}
 
+/* 
+.head {
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.top {
+    height: 300px;
+}
 
+.bottom {
+    border-top: solid 2em var(--color1);
+    padding: 1em;
+    height: 200px;
+} */
+/* 
+.chatrooms-container {
+    padding: .5em 1em;
+    align-items: center;
 
+}
 
+.chatbox-list {
+    overflow-y: scroll;
+}
 
-/* @media only screen and (min-width: 500px) {
+.message-container p {
+    text-align: center;
+} */
+
+@media only screen and (min-width: 500px) {
 
     main {
         flex-direction: column;
@@ -54,6 +129,6 @@ h2 {
     section {
         margin: 0 2em;
     }
-} */
+} 
 
 

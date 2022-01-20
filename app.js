@@ -4,8 +4,8 @@ const signInForm = document.querySelector('#signIn-form');
 const signUpForm = document.querySelector('#signUp-form');
 const signUpLink = document.querySelector('#signup-link');
 const signInLink = document.querySelector('#signin-link');
-const signInSection = document.querySelector('.signIn-section');
-const signUpSection = document.querySelector('.signUp-section');
+const signInSection = document.querySelector('#signIn-section');
+const signUpSection = document.querySelector('#signUp-section');
 console.log(signInForm,
     signUpForm,
     signUpLink,
