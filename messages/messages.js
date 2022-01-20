@@ -68,7 +68,8 @@ async function displayMessages() {
         let theme = message.chatrooms.theme;
 
         chatboxListEl.style.backgroundImage = 'url(' + theme + ')';
-        console.log(theme);
+        
+        chatboxListEl.style.backgroundSize = 'cover';
     }
 }
 
