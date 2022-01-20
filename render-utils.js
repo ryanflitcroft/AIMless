@@ -1,16 +1,25 @@
 export async function renderMessages(messages) {
     const messagesContainerEl = document.createElement('div');
-    // const iconEl = document.createElement('img');
+    const iconEl = document.createElement('img');
     const messageEl = document.createElement('p');
     const usernameEl = document.createElement('span');
     const textEl = document.createElement('span');
 
+    
     usernameEl.classList.add('username');
 
+    iconEl.src = messages.profiles.icon;
     usernameEl.textContent = `${messages.profiles.username} said: `;
     textEl.textContent = messages.message;
 
-    messageEl.append(usernameEl, textEl);
+    if (messages.chatrooms.id === 7) {
+        iconEl.classList.add('icon');
+        iconEl.addEventListener('click', () => {
+            window.location.href = `../messages/?id=${messages.profiles.chat_id}`;
+        });
+    } 
+
+    messageEl.append(iconEl, usernameEl, textEl);
     messagesContainerEl.append(messageEl);
 
     return messagesContainerEl;
