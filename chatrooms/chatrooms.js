@@ -6,7 +6,6 @@ const generalChatEl = document.querySelector('#general-chat');
 const createMessageForm = document.querySelector('#create-message');
 const chatroomsListEl = document.querySelector('#chatroom-list');
 const logoutButton = document.querySelector('#logout');
-const chatboxEl = document.querySelector('#chatbox-list');
 
 
 console.log(generalChatEl, createMessageForm, chatroomsListEl, logoutButton);
@@ -61,7 +60,6 @@ async function displayChatrooms() {
             const chatroomEl = await renderChatrooms(chatroom);
             chatroomsListEl.append(chatroomEl);
         }
-        chatboxEl.style.backgroundImage = `url('${chatroom.theme}')`;
         
     }
 }

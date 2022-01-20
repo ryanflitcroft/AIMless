@@ -64,6 +64,11 @@ async function displayMessages() {
     for (let message of messages) {
         const messagesEL = await renderMessages(message);
         chatboxListEl.append(messagesEL);
+
+        let theme = message.chatrooms.theme;
+
+        // chatboxListEl.style.backgroundImage = 'url(' + 'theme' + ')';
+        console.log(theme);
     }
 }
 
