@@ -61,15 +61,15 @@ async function displayMessages() {
     chatboxListEl.textContent = '';
 
     for (let message of messages) {
-        const messagesEL = await renderMessages(message);
+        const messagesEl = await renderMessages(message);
         const id = message.profiles.user_id;
         const user = await getUser();
 
         if (id === user.user.id) {
-            messagesEL.classList.add('user-message');
+            messagesEl.classList.add('user-message');
         }
 
-        chatboxListEl.append(messagesEL);
+        chatboxListEl.append(messagesEl);
 
         let theme = message.chatrooms.theme;
 

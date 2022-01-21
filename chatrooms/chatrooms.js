@@ -70,6 +70,12 @@ async function displayGeneralChat() {
     for (let message of lastMessages) {
 
         const messagesEl = await renderMessages(message);
+        const id = message.profiles.user_id;
+        const user = await getUser();
+
+        if (id === user.user.id) {
+            messagesEl.classList.add('user-message');
+        }
 
         generalChatEl.append(messagesEl);
     }
