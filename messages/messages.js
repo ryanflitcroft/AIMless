@@ -10,25 +10,6 @@ const chatbox = document.querySelector('#chatbox');
 const chatContainer = document.querySelector('#chat-container');
 const params = new URLSearchParams(window.location.search);
 
-
-createMessageForm.addEventListener('submit', async(e) => {
-    e.preventDefault();
-
-    const data = new FormData(createMessageForm);
-    const message = data.get('message');
-
-    const user = await getUser();
-
-    const id = params.get('id');
-
-    await createMessage({
-        message,
-        user_id: user.user.id,
-        chat_id: id
-    });
-    createMessageForm.reset();
-});
-
 window.addEventListener('load', async() => {
     const id = params.get('id');
     
@@ -55,6 +36,28 @@ window.addEventListener('load', async() => {
     chatboxListEl.scrollTop = 100000;
 });
 
+homeButton.addEventListener('click', () => {
+    window.location.href = '../chatrooms/';
+});
+
+createMessageForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
+    
+    const data = new FormData(createMessageForm);
+    const message = data.get('message');
+    
+    const user = await getUser();
+    
+    const id = params.get('id');
+    
+    await createMessage({
+        message,
+        user_id: user.user.id,
+        chat_id: id
+    });
+    createMessageForm.reset();
+});
+
 async function displayMessages() {
     const id = params.get('id');
     const messages = await getMessages(id);
@@ -78,7 +81,3 @@ async function displayMessages() {
         chatboxListEl.style.backgroundSize = 'cover';
     }
 }
-
-homeButton.addEventListener('click', () => {
-    window.location.href = '../chatrooms/';
-});
