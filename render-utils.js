@@ -10,6 +10,7 @@ export async function renderMessages(messages) {
 
     iconEl.src = messages.profiles.icon;
     usernameEl.textContent = `${messages.profiles.username} said: `;
+
     textEl.textContent = messages.message;
 
     if (messages.chatrooms.id === 7) {
@@ -21,13 +22,13 @@ export async function renderMessages(messages) {
 
     messageEl.append(iconEl, usernameEl, textEl);
     messagesContainerEl.append(messageEl);
-
+    
     return messagesContainerEl;
 }
 
 export async function renderChatrooms(chatrooms) {
     const chatroomsContainerEl = document.createElement('div');
-    // const iconEl = document.createElement('img');
+    
     const nameEl = document.createElement('a');
     
     nameEl.href = `../messages/?id=${chatrooms.id}`;
@@ -38,10 +39,3 @@ export async function renderChatrooms(chatrooms) {
 
     return chatroomsContainerEl;
 }
-
-// export function updateLog(parentElement, string) {
-//     const p = document.createElement('p');
-//     p.textContent = `> ${string}`;
-//     parentElement.append(p);
-//     return parentElement.scrollTop = parentElement.scrollHeight;
-// }

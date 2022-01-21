@@ -8,8 +8,6 @@ const chatroomsListEl = document.querySelector('#chatroom-list');
 const logoutButton = document.querySelector('#logout');
 
 
-console.log(generalChatEl, createMessageForm, chatroomsListEl, logoutButton);
-
 logoutButton.addEventListener('click', () => {
     logout();
 });
@@ -38,8 +36,6 @@ createMessageForm.addEventListener('submit', async(e) => {
     const message = data.get('message');
 
     const user = await getUser();
-
-    // const id = params.get('id');
 
     await createMessage({
         message,

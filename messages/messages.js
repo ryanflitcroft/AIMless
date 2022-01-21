@@ -20,7 +20,6 @@ createMessageForm.addEventListener('submit', async(e) => {
     const user = await getUser();
 
     const id = params.get('id');
-    // const chat_id = await getSingleChatroom(id);
 
     await createMessage({
         message,
@@ -63,6 +62,13 @@ async function displayMessages() {
 
     for (let message of messages) {
         const messagesEL = await renderMessages(message);
+        const id = message.profiles.user_id;
+        const user = await getUser();
+
+        if (id === user.user.id) {
+            messagesEL.classList.add('user-message');
+        }
+
         chatboxListEl.append(messagesEL);
 
         let theme = message.chatrooms.theme;
