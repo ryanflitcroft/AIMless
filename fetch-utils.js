@@ -37,6 +37,21 @@ export async function getSingleChatroom(id) {
     return checkError(response);
 }
 
+async function createProfile(username, email) {
+    const response = await client
+        .from('profiles')
+        .insert([{ username, email }]); 
+    return checkError(response);
+}
+
+export async function createMessage(message){
+    const response = await client
+        .from('messages')
+        .insert(message);
+
+    return checkError(response);
+}
+
 export async function checkAuth() {
     const user = await getUser();
 
@@ -71,17 +86,3 @@ function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
 
-async function createProfile(username, email) {
-    const response = await client
-        .from('profiles')
-        .insert([{ username, email }]); 
-    return checkError(response);
-}
-
-export async function createMessage(message){
-    const response = await client
-        .from('messages')
-        .insert(message);
-
-    return checkError(response);
-}
