@@ -59,11 +59,17 @@ h2 {
 
 p {
     background: rgba(255, 255, 255, 0.76);
-    padding: .75em;
+    padding: .75em; 
     border-radius: 0 1em 1em 1em;
-    border: solid 3px #606388b7
+    border: solid 3px #606388b7;
 }
+.user-message p {
+    text-align: right;
+    border-radius: 1em 1em 0 1em;
+    border-color: var(--color2);
 
+   /* transform: scaleX(-1); */
+}
 div p {
     margin: 0.25em;
     padding: 0.5em;
@@ -101,17 +107,5 @@ span.username{
     color: var(--color2);
 }
 
-@media only screen and (min-width: 500px) {
-
-    main {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    section {
-        margin: 0 2em;
-    }
-} 
 
 

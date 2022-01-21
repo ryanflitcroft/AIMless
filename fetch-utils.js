@@ -72,7 +72,6 @@ function checkError({ data, error }) {
 }
 
 async function createProfile(username, email) {
-    //creating a profile in the supabase profile table that consists of a username and email. 
     const response = await client
         .from('profiles')
         .insert([{ username, email }]); 
@@ -83,8 +82,6 @@ export async function createMessage(message){
     const response = await client
         .from('messages')
         .insert(message);
-        // .single();
-
 
     return checkError(response);
 }
