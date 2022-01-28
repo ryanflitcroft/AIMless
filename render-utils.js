@@ -1,3 +1,5 @@
+import { SPECIAL_NUMBER } from './constants.js';
+
 export async function renderMessages(messages) {
     const messagesContainerEl = document.createElement('div');
     const iconEl = document.createElement('img');
@@ -13,7 +15,7 @@ export async function renderMessages(messages) {
 
     textEl.textContent = messages.message;
 
-    if (messages.chatrooms.id === 7) {
+    if (messages.chatrooms.id === SPECIAL_NUMBER) {
 
         iconEl.addEventListener('click', () => {
             window.location.href = `../messages/?id=${messages.profiles.chat_id}`;
