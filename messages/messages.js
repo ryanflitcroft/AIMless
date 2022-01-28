@@ -1,3 +1,5 @@
+import { SPECIAL_NUMBER, SCROLL_TOP } from '../constants.js';
+
 import { checkAuth, createMessage, getUser, getMessages, getSingleChatroom, client } from '../fetch-utils.js';
 import { renderMessages } from '../render-utils.js';
 checkAuth();
@@ -17,7 +19,7 @@ window.addEventListener('load', async() => {
     const chatroom = await getSingleChatroom(id);
     chatroomNameEl.textContent = chatroom.name;
 
-    if (chatroom.id === 7) {
+    if (chatroom.id === SPECIAL_NUMBER) {
         chatbox.classList.add('hidden');
         chatContainer.style.height = '500px';
         chatboxListEl.style.height = '500px';
@@ -26,14 +28,15 @@ window.addEventListener('load', async() => {
     await displayMessages();
 
     await client
-        .from('*')
+    //
+        .from(`messages:chatroom_id=eq.${chatroom.id}`) // something like this (I might have gotten the names wrong) should keep the updates constrained to getting a refresh only when THIS chatroom's updates
         .on('*', async payload => {
             console.log('Change received!', payload);
             await displayMessages();
-            chatboxListEl.scrollTop = 100000;
+            chatboxListEl.scrollTop = SCROLL_TOP;
         })
         .subscribe();
-    chatboxListEl.scrollTop = 100000;
+    chatboxListEl.scrollTop = SCROLL_TOP;
 });
 
 homeButton.addEventListener('click', () => {
@@ -76,7 +79,7 @@ async function displayMessages() {
 
         let theme = message.chatrooms.theme;
 
-        chatboxListEl.style.backgroundImage = 'url(' + theme + ')';
+        chatboxListEl.style.backgroundImage = `url(${theme})`;
         
         chatboxListEl.style.backgroundSize = 'cover';
     }

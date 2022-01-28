@@ -1,5 +1,6 @@
 import { checkAuth, logout, getUser, createMessage, getChatrooms, getMessages, client } from '../fetch-utils.js';
 import { renderChatrooms, renderMessages } from '../render-utils.js';
+import { OTHER_SCROLL_TOP, GENERAL_CHAT_ID } from '../constants.js';
 checkAuth();
 
 const generalChatEl = document.querySelector('#general-chat');
@@ -19,14 +20,14 @@ window.addEventListener('load', async() => {
     await displayGeneralChat();
 
     await client
-        .from('*')
+        .from('*') // seems like with some tinkering you could contrain the changes as in messages.js. something like: .from(`messages:chatroom_id=eq.${chatroom.id}`), but you'll need to figure out what changes you want to watch for
         .on('*', async payload => {
             console.log('Change received!', payload);
             await displayGeneralChat();
-            generalChatEl.scrollTop = 999;
+            generalChatEl.scrollTop = OTHER_SCROLL_TOP;
         })
         .subscribe();
-    generalChatEl.scrollTop = 999;
+    generalChatEl.scrollTop = OTHER_SCROLL_TOP;
 });
 
 createMessageForm.addEventListener('submit', async(e) => {
@@ -52,7 +53,7 @@ async function displayChatrooms() {
     chatroomsListEl.textContent = '';
 
     for (let chatroom of chatrooms) {
-        if (chatroom.id !== 1) {
+        if (chatroom.id !== GENERAL_CHAT_ID) {
             const chatroomEl = await renderChatrooms(chatroom);
             chatroomsListEl.append(chatroomEl);
         }
@@ -61,7 +62,7 @@ async function displayChatrooms() {
 }
 
 async function displayGeneralChat() {
-    const messages = await getMessages(1);
+    const messages = await getMessages(GENERAL_CHAT_ID);
 
     const lastMessages = messages.slice(-2);
 
