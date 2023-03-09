@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/home.css">
-    <link rel="stylesheet" href="../styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>Chatrooms</title>
-</head>
+  </head>
 
-<body> 
-
+  <body>
     <main>
-        <section>
-            <div class="head">
-                <img src="../assets/logo.png" alt="">
-                <h2>Chatrooms</h2>
-                <button id="logout" title="logout">X</button>
-            </div>
-            <div id="chatroom-list" class="chatroom-list">
-
-            </div>
-        </section>
-        <section class="general-chatbox">
-            <div id="general-chat" class="general-chat">
-                
-            </div>
-            <form name="create-message" id="create-message">
-                <div>
-                    <input name="message" type="text" placeholder="Type Message Here">
-                    <button form="create-message" type="submit" title="send">✉️</button>
-                </div>
-            </form>
-        </section>
+      <section>
+        <div class="head">
+          <img src="../assets/logo.png" alt="" />
+          <h2>Chatrooms</h2>
+          <button id="logout" title="logout">X</button>
+        </div>
+        <div id="chatroom-list" class="chatroom-list"></div>
+      </section>
+      <section class="general-chatbox">
+        <div id="general-chat" class="general-chat"></div>
+        <form name="create-message" id="create-message">
+          <div>
+            <input name="message" type="text" placeholder="Type Message Here" />
+            <button form="create-message" type="submit" title="send">✉️</button>
+          </div>
+        </form>
+      </section>
     </main>
-    <footer>
-       
-    </footer>
+    <footer></footer>
     <script type="module" src="./chatrooms.js"></script>
-</body>
-
+  </body>
 </html>

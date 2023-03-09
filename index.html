@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+    ></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/home.css">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    
     <title>Sign-in/Sign-up</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-      <img src="./assets/logo.png" alt="aimless logo image"/> 
-      <h1> Welcome to AIMless </h1>
+      <img src="./assets/logo.png" alt="aimless logo image" />
+      <h1>Welcome to AIMless</h1>
     </header>
     <main>
-        <section id="signIn-section">
-            <h2>Sign-in</h2>
-            <form id="signIn-form">
-              <label for="inEmail">Email</label>
-                <input type="email" class="" name="inEmail" placeholder="youremail@AIMless.com">
-              <label for="inPassword">Password</label>
-                <input type="password" class="" name="inPassword" placeholder="password">
-              <button type="submit" form="signIn-form">Submit</button>
-            </form>
-            <p>Don't have an account? <span id="signup-link">SignUp!</span> </p>
-        </section>
-          
-        <section id="signUp-section" class="hidden">
-            <h2>Sign-up</h2>
-            <form id="signUp-form">
-              <label for="username">Username</label>
-                <input type="text" class="" id="username-input" name="username" placeholder="username">
-                <label for="upEmail">Email</label>
-                <input type="email" class="" id="upEmail-input" name="upEmail" placeholder="youremail@AIMless.com">
-              <label for="upPassword">Password</label>
-                <input type="password" class="" id="upPassword-input" name="upPassword" placeholder="password">
-              <button type="submit" form="signUp-form" id="signUp-submit">Submit</button>
-            </form>
-            <p>Already have an account? <span id="signin-link">SignIn!</span> </p>
-        </section>
-    </main>
-    <footer>
+      <section id="signIn-section">
+        <h2>Sign-in</h2>
+        <form id="signIn-form">
+          <label for="inEmail">Email</label>
+          <input
+            type="email"
+            class=""
+            name="inEmail"
+            placeholder="youremail@AIMless.com"
+          />
+          <label for="inPassword">Password</label>
+          <input
+            type="password"
+            class=""
+            name="inPassword"
+            placeholder="password"
+          />
+          <button type="submit" form="signIn-form">Submit</button>
+        </form>
+        <p>Don't have an account? <span id="signup-link">SignUp!</span></p>
+      </section>
 
-    </footer>
+      <section id="signUp-section" class="hidden">
+        <h2>Sign-up</h2>
+        <form id="signUp-form">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class=""
+            id="username-input"
+            name="username"
+            placeholder="username"
+          />
+          <label for="upEmail">Email</label>
+          <input
+            type="email"
+            class=""
+            id="upEmail-input"
+            name="upEmail"
+            placeholder="youremail@AIMless.com"
+          />
+          <label for="upPassword">Password</label>
+          <input
+            type="password"
+            class=""
+            id="upPassword-input"
+            name="upPassword"
+            placeholder="password"
+          />
+          <button type="submit" form="signUp-form" id="signUp-submit">
+            Submit
+          </button>
+        </form>
+        <p>Already have an account? <span id="signin-link">SignIn!</span></p>
+      </section>
+    </main>
+    <footer></footer>
 
     <script type="module" src="./app.js"></script>
-</body>
-
+  </body>
 </html>
